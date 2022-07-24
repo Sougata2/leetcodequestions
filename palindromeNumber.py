@@ -15,7 +15,8 @@ def palindrome(x):
         remainder = int(second_half % 10)
         first_half = (first_half*10) + remainder
         second_half = int(second_half/10)
-    # if size is odd perform an extra  /10 operation to get the second half correctly.
+    # if size is odd perform an extra  /10 operation to get the second half 
+    # correctly.
     if size % 2 != 0:
         second_half = int(second_half/10)
 
