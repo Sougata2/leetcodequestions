@@ -7,13 +7,13 @@ def findPath(grid):
 
 def calcPath(row, col, i, j, ans, temp, grid):
     if i >= row or j >= col:
-        return 
-    
+        return
+
     temp.append(grid[i][j])
 
     if i == row-1 and j == col-1:
         ans.append(temp[:])
-    
+
     calcPath(row, col, i+1, j, ans, temp, grid)
     calcPath(row, col, i, j+1, ans, temp, grid)
 
