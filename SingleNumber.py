@@ -1,4 +1,4 @@
-def single_number(nums: list[int]) -> int:
+def single_number(nums):
     single_num = None
     nums.sort()
     if len(nums) > 1:

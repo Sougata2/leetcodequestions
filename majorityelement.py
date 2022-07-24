@@ -1,4 +1,4 @@
-def majority_element(nums: list[int]) -> int:
+def majority_element(nums):
     nums.sort()
     output = None
     limit = len(nums) // 2
