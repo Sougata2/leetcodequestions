@@ -1,4 +1,5 @@
 def differences(arr, n):
+    ans = []
     def find_distinct(l, r):
         res = 0
         i = l
@@ -10,8 +11,12 @@ def differences(arr, n):
         return res
 
     for i in range(n):
-        arr[i] = find_distinct(0, i) - find_distinct(i+1, n)
-    print(arr)
+        l = find_distinct(0, i)
+        r = find_distinct(i+1, n)
+        ans.append(l-r)
+    print(ans)
 
 
 differences([4, 3, 3], 3)
+differences([4, 4, 3, 3], 4)
+differences([29, 36, 9, 11, 40, 13, 32, 8, 40], 9)
