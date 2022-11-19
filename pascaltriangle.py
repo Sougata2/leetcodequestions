@@ -1,6 +1,6 @@
 def pascal_triangle(n):
     if n == 1:
-        return [1]
+        return [[1]]
 
     triangle = [[1], [1, 1]]
     for i in range(n-2):
@@ -12,9 +12,9 @@ def pascal_triangle(n):
             if j == layer_size-1:
                 new_layer.append(layer[j])
         triangle.append(new_layer)
-    print(triangle)
+    return triangle
 
 
-pascal_triangle(3)
-pascal_triangle(2)
-pascal_triangle(1)
+print(pascal_triangle(3))
+print(pascal_triangle(2))
+print(pascal_triangle(1))
