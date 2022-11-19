@@ -1,26 +1,20 @@
-def pascal_triangle(rows):
-    # Hard coded prior values.
-    triangle_rows = [[1]]
-    rows -= 1
-    if rows == 0:
-        return triangle_rows
-    triangle_rows.append([1, 1])
-    rows -= 1
-    if rows == 0:
-        return triangle_rows
+def pascal_triangle(n):
+    if n == 1:
+        return [1]
 
-    while rows > 0:
-        last_row = triangle_rows[-1]
-        temp_list = [last_row[0]]
-        for i in range(len(last_row)):
-            if i == len(last_row)-1:
-                temp_list.append(last_row[-1])
-            else:
-                add = last_row[i] + last_row[i+1]
-                temp_list.append(add)
-        triangle_rows.append(temp_list)
-        rows -= 1
-    return triangle_rows
+    triangle = [[1], [1, 1]]
+    for i in range(n-2):
+        layer = triangle[-1]
+        layer_size = len(layer)
+        new_layer = [1]
+        for j in range(1, layer_size):
+            new_layer.append(layer[j] + layer[j - 1])
+            if j == layer_size-1:
+                new_layer.append(layer[j])
+        triangle.append(new_layer)
+    print(triangle)
 
 
-print(pascal_triangle(10))
+pascal_triangle(3)
+pascal_triangle(2)
+pascal_triangle(1)
