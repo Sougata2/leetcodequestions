@@ -1,20 +1,15 @@
 def majority_element(nums):
     nums.sort()
-    output = None
     limit = len(nums) // 2
-    count = 1
-    if len(nums) > 1:
-        for i in range(len(nums)-1):
-            if nums[i] == nums[i+1]:
-                count += 1
-                if count > limit:
-                    output = nums[i]
-            else:
-                count = 1
-    else:
-        output = nums[0]
-
-    return output
+    num_count = 1
+    for i in range(1, len(nums)):
+        if nums[i] == nums[i-1]:
+            num_count += 1
+        else:
+            if num_count > limit:
+                return nums[i-1]
+            num_count = 1
+    return nums[len(nums)-1] 
 
 
 if __name__ == "__main__":
