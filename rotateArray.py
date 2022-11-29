@@ -12,6 +12,7 @@ def rotate(nums, k):
         else:
             nums[i+k] = nums[i]
     
+    # place the last partition at the first
     ind = 0
     for i in range(len(last_nums)-1, -1, -1):
         nums[ind] = last_nums[i]
